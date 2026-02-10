@@ -64,7 +64,8 @@ export default function ProductsPage() {
   }, []);
 
   const categories = useMemo(() => {
-    const cats = [...new Set(allProducts.map(p => p.category))].sort();
+    // const cats = [...new Set(allProducts.map(p => p.category))].sort();
+    const cats = Array.from(new Set(allProducts.map(p => p.category))).sort();
     return cats;
   }, [allProducts]);
 
@@ -72,7 +73,8 @@ export default function ProductsPage() {
     const filtered = filters.category !== 'all'
       ? allProducts.filter(p => p.category === filters.category)
       : allProducts;
-    return [...new Set(filtered.map(p => p.brand).filter(Boolean))].sort();
+    // return [...new Set(filtered.map(p => p.brand).filter(Boolean))].sort();
+    return Array.from(new Set(filtered.map(p => p.brand).filter(Boolean))).sort();
   }, [allProducts, filters.category]);
 
   const filteredProducts = useMemo(() => {
