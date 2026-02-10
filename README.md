@@ -130,7 +130,7 @@ shopzilla/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/shopzilla.git
+git clone https://github.com/nagamahesh5544/shopzilla.git
 cd shopzilla
 
 # Install dependencies
